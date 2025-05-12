@@ -1,0 +1,20 @@
+import 'package:cube_games_store/theme.dart';
+import 'package:flutter/material.dart';
+import 'pages/auth/auth_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Cube Games Store',
+      theme: darkTheme,
+      home: const AuthPage(),
+    );
+  }
+}
