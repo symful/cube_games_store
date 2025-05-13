@@ -18,9 +18,11 @@ class HomeSearchResults extends StatelessWidget {
     return Theme(
       data: darkTheme,
       child: Material(
-        child: Column(
-          children:
-              gamesList.map((game) => HomeSearchResult(game: game)).toList(),
+        child: SingleChildScrollView(
+          child: Column(
+            children:
+                gamesList.map((game) => HomeSearchResult(game: game)).toList(),
+          ),
         ),
       ),
     );
@@ -50,13 +52,16 @@ class HomeSearchResult extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
                   Text(
-                    'Sample Game',
+                    game.title,
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 4),
-                  Text('\$9.99', style: TextStyle(color: Colors.grey)),
+                  Text(
+                    '${game.currencyTag}${game.price}',
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),

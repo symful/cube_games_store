@@ -63,7 +63,8 @@ final List<Game> fakeGames = [
     rating: 4.5,
     releaseDate: DateTime(2025, 1, 1),
     platforms: [Platform.PS5],
-    videoUrl: 'https://example.com/game1.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
     description: 'Game 2',
@@ -73,7 +74,8 @@ final List<Game> fakeGames = [
     rating: 4.0,
     releaseDate: DateTime(2025, 2, 1),
     platforms: [Platform.PS4],
-    videoUrl: 'https://example.com/game2.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
     description: 'Game 3',
@@ -83,7 +85,8 @@ final List<Game> fakeGames = [
     rating: 4.8,
     releaseDate: DateTime(2025, 3, 1),
     platforms: [Platform.WINDOWS],
-    videoUrl: 'https://example.com/game3.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
     description: 'Game 4',
@@ -93,7 +96,8 @@ final List<Game> fakeGames = [
     rating: 3.5,
     releaseDate: DateTime(2025, 4, 1),
     platforms: [Platform.SWITCH],
-    videoUrl: 'https://example.com/game4.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
     description: 'Game 5',
@@ -103,7 +107,8 @@ final List<Game> fakeGames = [
     rating: 4.2,
     releaseDate: DateTime(2025, 5, 1),
     platforms: [Platform.ANDROID],
-    videoUrl: 'https://example.com/game5.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
 
   Game(
@@ -114,7 +119,8 @@ final List<Game> fakeGames = [
     rating: 4.7,
     releaseDate: DateTime(2025, 6, 1),
     platforms: [Platform.IOS],
-    videoUrl: 'https://example.com/game6.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
     description: 'Game 7',
@@ -124,6 +130,7 @@ final List<Game> fakeGames = [
     rating: 4.1,
     releaseDate: DateTime(2025, 7, 1),
     platforms: [Platform.MAC],
-    videoUrl: 'https://example.com/game7.mp4',
+    videoUrl:
+        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
 ];

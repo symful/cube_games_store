@@ -1,8 +1,11 @@
 import 'package:cube_games_store/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:media_kit/media_kit.dart';
 import 'pages/auth/auth_page.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MediaKit.ensureInitialized();
   runApp(const MyApp());
 }
 

@@ -38,7 +38,7 @@ class _HomeTrendingListState extends State<HomeTrendingList>
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: MediaQuery.of(context).size.height * 9 / 16,
           child: PageView(
             allowImplicitScrolling: true,
             controller: _pageViewController,

@@ -1,11 +1,11 @@
 {
-    "name": "cube_games_store",
+    "name": "Cube Games Store",
     "short_name": "cube_games_store",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Buy and sell games with Cube Games Store",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
