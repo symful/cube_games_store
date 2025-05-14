@@ -9,6 +9,7 @@ class Game {
   final List<Platform> platforms;
   final double rating;
   final String thumbnailUrl;
+  final String bannerUrl;
   final String videoUrl;
   final double price;
   final String currencyTag = "\$";
@@ -20,6 +21,7 @@ class Game {
     required this.platforms,
     required this.rating,
     required this.thumbnailUrl,
+    required this.bannerUrl,
     required this.videoUrl,
     required this.price,
   });
@@ -58,7 +60,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 1',
     price: 9.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 1',
     rating: 4.5,
     releaseDate: DateTime(2025, 1, 1),
@@ -69,7 +72,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 2',
     price: 19.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 2',
     rating: 4.0,
     releaseDate: DateTime(2025, 2, 1),
@@ -80,7 +84,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 3',
     price: 29.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 3',
     rating: 4.8,
     releaseDate: DateTime(2025, 3, 1),
@@ -91,7 +96,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 4',
     price: 39.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 4',
     rating: 3.5,
     releaseDate: DateTime(2025, 4, 1),
@@ -102,7 +108,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 5',
     price: 49.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 5',
     rating: 4.2,
     releaseDate: DateTime(2025, 5, 1),
@@ -114,7 +121,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 6',
     price: 59.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 6',
     rating: 4.7,
     releaseDate: DateTime(2025, 6, 1),
@@ -125,7 +133,8 @@ final List<Game> fakeGames = [
   Game(
     description: 'Game 7',
     price: 69.99,
-    thumbnailUrl: 'https://picsum.photos/3000/3000',
+    thumbnailUrl: 'https://picsum.photos/1000/3000',
+    bannerUrl: 'https://picsum.photos/3000/1000',
     title: 'Game 7',
     rating: 4.1,
     releaseDate: DateTime(2025, 7, 1),

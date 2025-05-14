@@ -15,14 +15,15 @@ class HomeSaleSection extends StatelessWidget {
       children: [
         // Header Row
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
           child: Row(
             children: [
               Text(
                 saleEvent.name,
                 style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  fontSize: 22,
                 ),
               ),
               const Spacer(),
@@ -36,7 +37,14 @@ class HomeSaleSection extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text('SEE ALL'),
+                child: const Text(
+                  'SEE ALL',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 13,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
               ),
             ],
           ),

@@ -1,7 +1,7 @@
+import 'package:cube_games_store/components/overview/video_player.dart';
 import 'package:cube_games_store/data/game.dart';
 import 'package:flutter/material.dart';
-import 'package:media_kit/media_kit.dart';
-import 'package:media_kit_video/media_kit_video.dart';
+import 'package:cube_games_store/components/custom_icons/back_arrow_button_icon.dart';
 
 class OverviewPage extends StatefulWidget {
   final Game game;
@@ -15,31 +15,15 @@ class _OverviewPageState extends State<OverviewPage> {
   bool isFavorited = false;
   Game get game => widget.game;
   Widget get lineDivider => SizedBox(
-    height: 24, // Explicit height
+    height: 24,
     child: VerticalDivider(width: 20, thickness: 1, color: Colors.white),
   );
-  // Create a [Player] to control playback.
-  late final player = Player();
-  // Create a [VideoController] to handle video output from [Player].
-  late final controller = VideoController(player);
-
-  @override
-  void initState() {
-    super.initState();
-    player.open(Media(game.videoUrl), play: false);
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    player.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: BackButton(onPressed: () => Navigator.pop(context)),
+        leading: BackArrowButtonIcon(onTap: () => Navigator.pop(context)),
         title: const Text('OVERVIEW'),
         actions: [
           IconButton(
@@ -54,8 +38,11 @@ class _OverviewPageState extends State<OverviewPage> {
           child: Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 9 / 16,
-                child: Video(controller: controller),
+                height: MediaQuery.of(context).size.height * 9 / 20,
+                child: VideoPlayer(
+                  videoUrl: game.videoUrl,
+                  thumbnailUrl: game.thumbnailUrl,
+                ),
               ),
               const SizedBox(height: 16),
               Text(game.title, style: TextStyle(fontSize: 24)),

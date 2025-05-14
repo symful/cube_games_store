@@ -1,3 +1,4 @@
+import 'package:cube_games_store/components/custom_icons/logo_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:cube_games_store/components/auth/auth_response_component.dart';
 
@@ -8,10 +9,7 @@ class AuthPage extends StatefulWidget {
   State<AuthPage> createState() => _AuthPageState();
 }
 
-class _AuthPageState extends State<AuthPage>
-    with
-        TickerProviderStateMixin // <-- for AnimatedSize
-        {
+class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
   bool isLoginMode = true;
   bool isAuthFinished = false;
   bool isLoading = false;
@@ -35,7 +33,7 @@ class _AuthPageState extends State<AuthPage>
 
   @override
   Widget build(BuildContext context) {
-    final titleText = isLoginMode ? 'LOGIN CUBE GAMES' : 'SIGN UP CUBE GAMES';
+    final titleText = isLoginMode ? 'LOGIN\nCUBE GAMES' : 'SIGN UP\nCUBE GAMES';
     final subText = isLoginMode ? 'Welcome back!' : 'Join us for epic journey';
     final buttonText = isLoginMode ? 'LOGIN' : 'SIGN UP';
     final toggleText =
@@ -46,9 +44,8 @@ class _AuthPageState extends State<AuthPage>
       body: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(24.0),
             child: Center(
-              // 1) cross-fade entire form on mode change
               child: AnimatedSwitcher(
                 duration: const Duration(milliseconds: 400),
                 transitionBuilder:
@@ -59,10 +56,9 @@ class _AuthPageState extends State<AuthPage>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Placeholder(fallbackHeight: 100),
+                      SizedBox(width: 82, height: 80, child: LogoIcon()),
                       const SizedBox(height: 16),
 
-                      // 2) animate title style change
                       AnimatedSwitcher(
                         duration: const Duration(milliseconds: 300),
                         child: Text(
@@ -70,8 +66,8 @@ class _AuthPageState extends State<AuthPage>
                           key: ValueKey(titleText),
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 36,
+                            fontFamily: 'Revamped',
                           ),
                         ),
                       ),
@@ -82,6 +78,11 @@ class _AuthPageState extends State<AuthPage>
                         child: Text(
                           subText,
                           key: ValueKey(subText),
+                          style: const TextStyle(
+                            fontSize: 20,
+                            fontFamily: 'Russo One',
+                            fontWeight: FontWeight.bold,
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -90,7 +91,7 @@ class _AuthPageState extends State<AuthPage>
                       _buildField(
                         controller: _usernameController,
                         label: 'Username',
-                        hint: 'Enter username',
+                        hint: 'username',
                         icon: Icons.person,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -115,7 +116,7 @@ class _AuthPageState extends State<AuthPage>
                                   controller: _emailController,
                                   label: 'Email',
                                   keyboardType: TextInputType.emailAddress,
-                                  hint: 'Enter email',
+                                  hint: 'email@gmail.com',
                                   icon: Icons.email,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
@@ -134,7 +135,7 @@ class _AuthPageState extends State<AuthPage>
                       _buildField(
                         controller: _passwordController,
                         label: 'Password',
-                        hint: 'Enter password',
+                        hint: 'password',
                         icon: Icons.lock,
                         obscure: true,
                         keyboardType: TextInputType.visiblePassword,
@@ -150,30 +151,55 @@ class _AuthPageState extends State<AuthPage>
                       ),
 
                       const SizedBox(height: 24),
-                      ElevatedButton(
-                        onPressed: _submitAuth,
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size.fromHeight(50),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4),
+                      SizedBox(
+                        height: 42,
+                        child: ElevatedButton(
+                          onPressed: _submitAuth,
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: const Size.fromHeight(50),
                           ),
+                          child:
+                              isLoading
+                                  ? const CircularProgressIndicator(
+                                    constraints: BoxConstraints(
+                                      maxHeight: 24,
+                                      maxWidth: 24,
+                                      minHeight: 24,
+                                      minWidth: 24,
+                                    ),
+                                  )
+                                  : Text(
+                                    buttonText,
+                                    style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
                         ),
-                        child:
-                            isLoading
-                                ? const CircularProgressIndicator()
-                                : Text(buttonText),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 24),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(toggleText),
+                          Text(
+                            toggleText,
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                           InkWell(
                             onTap: _toggleMode,
                             child: Text(
                               toggleTextLink,
-                              style: const TextStyle(color: Colors.blue),
+                              style: const TextStyle(
+                                color: Color(0xff65EF23),
+                                fontFamily: 'Poppins',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ],
@@ -209,17 +235,34 @@ class _AuthPageState extends State<AuthPage>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(label),
+          Text(
+            label,
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
           const SizedBox(height: 4),
           TextFormField(
             keyboardType: keyboardType,
             controller: controller,
             obscureText: obscure,
             validator: validator,
+            style: const TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
+            ),
             decoration: InputDecoration(
-              prefixIcon: Icon(icon),
+              prefixIcon: Icon(icon, color: Color(0xff969696)),
               hintText: hint,
-              border: const OutlineInputBorder(),
+              hintStyle: const TextStyle(
+                fontFamily: 'Montserrat',
+                fontSize: 12,
+                color: Color(0xff969696),
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ],

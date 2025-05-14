@@ -1,4 +1,4 @@
-import 'package:cube_games_store/components/home/home_game_thumbnail.dart';
+import 'package:cube_games_store/components/home/home_game_banner.dart';
 import 'package:cube_games_store/components/home/home_page_indicator.dart';
 import 'package:cube_games_store/data/game.dart';
 import 'package:flutter/foundation.dart';
@@ -38,14 +38,14 @@ class _HomeTrendingListState extends State<HomeTrendingList>
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 9 / 16,
+          height: MediaQuery.of(context).size.height * 9 / 20,
           child: PageView(
             allowImplicitScrolling: true,
             controller: _pageViewController,
             onPageChanged: _handlePageViewChanged,
             children:
                 _trendsList.map((game) {
-                  return HomeGameThumbnail(game: game, borderRadiusSize: 8);
+                  return HomeGameBanner(game: game, borderRadiusSize: 8);
                 }).toList(),
           ),
         ),

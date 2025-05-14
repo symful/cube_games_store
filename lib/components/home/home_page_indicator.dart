@@ -19,7 +19,6 @@ class HomePageIndicator extends StatelessWidget {
     if (!isOnDesktopAndWeb) {
       return const SizedBox.shrink();
     }
-    final ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -39,8 +38,8 @@ class HomePageIndicator extends StatelessWidget {
           ),
           TabPageSelector(
             controller: tabController,
-            color: colorScheme.surface,
-            selectedColor: colorScheme.primary,
+            selectedColor: Color(0xff60CF2C),
+            color: Color(0xffB7BED5),
           ),
           IconButton(
             splashRadius: 16.0,
