@@ -34,3 +34,4 @@ Run
 ```sh
 flutter build web --release
 ```
+or visit [Our Demo](https://cubegamesstore.deno.dev)
