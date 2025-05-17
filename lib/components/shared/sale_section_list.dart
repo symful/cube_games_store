@@ -71,11 +71,11 @@ class _SaleSectionListState extends State<SaleSectionList> {
       builder: (context, constraints) {
         // Responsive column count based on available width
         final crossAxisCount = switch (constraints.maxWidth) {
-          >= 1200 => 5,
-          >= 900 => 4,
-          >= 600 => 3,
-          >= 400 => 2,
-          _ => 1,
+          >= 1200 => 6,
+          >= 900 => 5,
+          >= 600 => 4,
+          >= 400 => 3,
+          _ => 2,
         };
 
         return GridView.builder(

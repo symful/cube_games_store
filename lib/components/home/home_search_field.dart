@@ -15,7 +15,6 @@ class HomeSearchField extends StatelessWidget {
       height: 38,
       child: TextField(
         controller: searchController,
-
         cursorColor: Color(0xffB7BED5),
         style: const TextStyle(
           color: Colors.white,
