@@ -26,30 +26,34 @@ class Game {
     required this.price,
   });
 
+  static IconData getIconData(Platform platform) {
+    switch (platform) {
+      case Platform.WINDOWS:
+        return Icons.computer;
+      case Platform.PS5:
+        return Icons.play_arrow;
+      case Platform.PS4:
+        return Icons.play_arrow;
+      case Platform.XBOX:
+        return Icons.play_arrow;
+      case Platform.SWITCH:
+        return Icons.switch_access_shortcut;
+      case Platform.ANDROID:
+        return Icons.android;
+      case Platform.IOS:
+        return Icons.apple;
+      case Platform.MAC:
+        return Icons.apple;
+      case Platform.LINUX:
+        return Icons.computer;
+      case Platform.WEB:
+        return Icons.web;
+    }
+  }
+
   List<Widget> getIcons() {
     return platforms.map((platform) {
-      switch (platform) {
-        case Platform.WINDOWS:
-          return const Icon(Icons.computer);
-        case Platform.PS5:
-          return const Icon(Icons.play_arrow);
-        case Platform.PS4:
-          return const Icon(Icons.play_arrow);
-        case Platform.XBOX:
-          return const Icon(Icons.play_arrow);
-        case Platform.SWITCH:
-          return const Icon(Icons.switch_access_shortcut);
-        case Platform.ANDROID:
-          return const Icon(Icons.android);
-        case Platform.IOS:
-          return const Icon(Icons.apple);
-        case Platform.MAC:
-          return const Icon(Icons.apple);
-        case Platform.LINUX:
-          return const Icon(Icons.computer);
-        case Platform.WEB:
-          return const Icon(Icons.web);
-      }
+      return Icon(Game.getIconData(platform), size: 20, color: Colors.white);
     }).toList();
   }
 }

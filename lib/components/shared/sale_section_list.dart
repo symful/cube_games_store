@@ -1,4 +1,4 @@
-import 'package:cube_games_store/components/home/home_game_thumbnail.dart';
+import 'package:cube_games_store/components/shared/game_thumbnail.dart';
 import 'package:cube_games_store/data/game.dart';
 import 'package:cube_games_store/data/sale_event.dart';
 import 'package:cube_games_store/pages/overview/overview_page.dart';
@@ -109,7 +109,7 @@ class _SaleSectionListState extends State<SaleSectionList> {
         alignment: Alignment.center,
         children: [
           Positioned.fill(
-            child: HomeGameThumbnail(game: game, borderRadiusSize: 4),
+            child: GameThumbnail(game: game, borderRadiusSize: 4),
           ),
           Align(
             alignment: Alignment.topCenter,
@@ -158,8 +158,27 @@ class _SaleSectionListState extends State<SaleSectionList> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: double.infinity,
-              color: Colors.black54,
-              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.bottomCenter,
+                  end: Alignment.topCenter,
+                  colors: <Color>[
+                    Color(0x80000000),
+                    Color(0x80000000),
+                    Color(0x80000000),
+                    Color(0x80000000),
+                    Color(0x80000000),
+                    Color(0x80000000),
+                    Color(0x80000000),
+                    Color(0x80000000),
+
+                    Color(0x00000000),
+                  ],
+                  tileMode: TileMode.mirror,
+                ),
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 4),
               child: Text(
                 game.title,
                 textAlign: TextAlign.center,

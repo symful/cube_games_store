@@ -1,8 +1,4 @@
-import 'package:cube_games_store/components/custom_icons/bag_icon.dart';
-import 'package:cube_games_store/components/custom_icons/home_icon.dart';
 import 'package:cube_games_store/components/custom_icons/logo_icon.dart';
-import 'package:cube_games_store/components/custom_icons/notification_icon.dart';
-import 'package:cube_games_store/components/custom_icons/profile_icon.dart';
 import 'package:cube_games_store/components/home/home_sale_section.dart';
 import 'package:cube_games_store/components/home/home_search_field.dart';
 import 'package:cube_games_store/components/home/home_search_results.dart';
@@ -10,6 +6,7 @@ import 'package:cube_games_store/components/home/home_trending_list.dart';
 import 'package:cube_games_store/data/game.dart';
 import 'package:cube_games_store/data/sale_event.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -114,17 +111,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
-          _buildBottomNavigationBarItem(HomeIcon(), 0),
-          _buildBottomNavigationBarItem(BagIcon(), 1),
-          _buildBottomNavigationBarItem(NotificationIcon(), 2),
-          _buildBottomNavigationBarItem(ProfileIcon(), 3),
+          _buildBottomNavigationBarItem(IconlyBold.home, 0),
+          _buildBottomNavigationBarItem(IconlyBold.bag_2, 1),
+          _buildBottomNavigationBarItem(IconlyBold.bag_2, 2),
+          _buildBottomNavigationBarItem(IconlyBold.profile, 3),
         ],
       ),
     );
   }
 
   BottomNavigationBarItem _buildBottomNavigationBarItem(
-    Widget icon,
+    IconData iconData,
     int index,
   ) {
     return BottomNavigationBarItem(
@@ -134,7 +131,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            icon,
+            Icon(
+              iconData,
+              size: 29,
+              color: index == 0 ? null : Color(0xff1B2134),
+            ),
             if (index == 0)
               Container(
                 height: 82,
@@ -142,7 +143,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 child: Container(
                   height: 3, // Line thickness
                   width: 29,
-                  color: Colors.green,
+                  color: Color(0xff65EF23),
                 ),
               ),
           ],

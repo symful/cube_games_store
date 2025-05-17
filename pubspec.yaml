@@ -39,6 +39,7 @@ dependencies:
   media_kit_libs_video: ^1.0.5
   flutter_svg: ^2.1.0
   google_fonts: ^6.2.1
+  iconly: ^1.0.1
 
 dev_dependencies:
   flutter_test:

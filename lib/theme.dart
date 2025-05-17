@@ -99,7 +99,10 @@ final ThemeData darkTheme = ThemeData(
     prefixStyle: TextStyle(letterSpacing: 2),
     counterStyle: TextStyle(letterSpacing: 2),
   ),
-
+  iconTheme: const IconThemeData(color: Color(0xff65EF23)),
+  iconButtonTheme: const IconButtonThemeData(
+    style: ButtonStyle(iconColor: WidgetStatePropertyAll(Color(0xff65EF23))),
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       backgroundColor: const Color(0xff60CF2C),

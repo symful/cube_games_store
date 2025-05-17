@@ -1,7 +1,19 @@
-import 'package:cube_games_store/components/custom_icons/icon_template.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class LogoIcon extends IconTemplate {
-  const LogoIcon({super.key, super.width, super.height})
-    : super(assetPath: 'assets/images/logo.svg', fit: BoxFit.contain);
+class LogoIcon extends StatelessWidget {
+  final double? width;
+  final double? height;
+
+  const LogoIcon({super.key, this.width, this.height});
+
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      'assets/images/logo.svg',
+      fit: BoxFit.contain,
+      width: width,
+      height: height,
+    );
+  }
 }
