@@ -52,7 +52,7 @@ class _OverviewPageState extends State<OverviewPage> {
                 height: MediaQuery.of(context).size.height * 9 / 20,
                 child: VideoPlayer(
                   videoUrl: game.videoUrl,
-                  thumbnailUrl: game.thumbnailUrl,
+                  bannerUrl: game.bannerUrl,
                 ),
               ),
               const SizedBox(height: 16),
@@ -160,7 +160,7 @@ class _OverviewPageState extends State<OverviewPage> {
                   height: 60,
                   child: Center(
                     child: Text(
-                      '${game.currencyTag}${game.price}',
+                      game.formattedPrice,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w400,

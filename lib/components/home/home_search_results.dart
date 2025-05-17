@@ -46,7 +46,7 @@ class HomeSearchResult extends StatelessWidget {
             SizedBox(
               width: 40,
               height: 40,
-              child: Image.network(game.thumbnailUrl, fit: BoxFit.cover),
+              child: Image.network(game.thumbnailUrl, fit: BoxFit.contain),
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -59,7 +59,7 @@ class HomeSearchResult extends StatelessWidget {
                   ),
                   SizedBox(height: 4),
                   Text(
-                    '${game.currencyTag}${game.price}',
+                    game.formattedPrice,
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],

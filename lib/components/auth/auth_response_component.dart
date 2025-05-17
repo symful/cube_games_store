@@ -68,10 +68,7 @@ class AuthResponseComponent extends StatelessWidget {
                                 const SizedBox(height: 30),
                                 TextButton(
                                   onPressed: () {
-                                    replacePage(
-                                      context,
-                                      (_) => const HomePage(),
-                                    );
+                                    pushPage(context, (_) => const HomePage());
                                   },
 
                                   child: Padding(

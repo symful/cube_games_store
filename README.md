@@ -4,7 +4,7 @@ Didesain oleh Akbar (homok) dan diimplementasikan oleh Kemal (ganteng). Ga ada s
 ## Dependencies
 No complex state management or even route management. This project is for a quick prototype for UI display.
 - Google Fonts (Additional fonts)
-- Iconly (Additional icons)
+- Iconly, Iconoir, FluentUI System Icons (Additional icons)
 - Flutter SVG (SVG)
 - Media Kit (Video Player)
 

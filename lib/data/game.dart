@@ -1,6 +1,10 @@
 // ignore_for_file: constant_identifier_names
 
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:iconoir_flutter/regular/apple_mac.dart';
+import 'package:iconoir_flutter/regular/playstation_gamepad.dart';
+import 'package:iconoir_flutter/regular/windows.dart';
 
 class Game {
   final String title;
@@ -14,6 +18,7 @@ class Game {
   final double price;
   final String currencyTag = "\$";
   final String id;
+  final String iconUrl;
 
   Game({
     required this.title,
@@ -26,132 +31,114 @@ class Game {
     required this.videoUrl,
     required this.price,
     required this.id,
+    required this.iconUrl,
   });
+
+  String get formattedPrice {
+    return price == 0 ? 'FREE' : '$currencyTag$price';
+  }
 
   static IconData getIconData(Platform platform) {
     switch (platform) {
-      case Platform.WINDOWS:
-        return Icons.computer;
-      case Platform.PS5:
-        return Icons.play_arrow;
-      case Platform.PS4:
-        return Icons.play_arrow;
       case Platform.XBOX:
-        return Icons.play_arrow;
-      case Platform.SWITCH:
-        return Icons.switch_access_shortcut;
+        return FluentIcons.xbox_console_24_filled;
       case Platform.ANDROID:
         return Icons.android;
-      case Platform.IOS:
-        return Icons.apple;
       case Platform.MAC:
-        return Icons.apple;
-      case Platform.LINUX:
-        return Icons.computer;
+        return FluentIcons.desktop_mac_24_filled;
       case Platform.WEB:
         return Icons.web;
+      default:
+        throw Exception('Unknown platform: $platform');
+    }
+  }
+
+  static Widget getIconWidget(Platform platform) {
+    switch (platform) {
+      case Platform.PS:
+        return const PlaystationGamepad(
+          width: 20,
+          height: 20,
+          color: Colors.white,
+        );
+      case Platform.WINDOWS:
+        return const Windows(width: 20, height: 20, color: Colors.white);
+      case Platform.IOS:
+        return const AppleMac(width: 20, height: 20, color: Colors.white);
+      default:
+        return Icon(getIconData(platform), size: 20, color: Colors.white);
     }
   }
 
   List<Widget> getIcons() {
     return platforms.map((platform) {
-      return Icon(Game.getIconData(platform), size: 20, color: Colors.white);
+      return Tooltip(message: platform.name, child: getIconWidget(platform));
     }).toList();
   }
 }
 
-enum Platform { WINDOWS, PS5, PS4, XBOX, SWITCH, ANDROID, IOS, MAC, LINUX, WEB }
+enum Platform { WINDOWS, PS, XBOX, ANDROID, IOS, MAC, WEB }
 
 final List<Game> fakeGames = [
   Game(
-    id: 'game1',
-    description: 'Game 1',
-    price: 9.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 1',
-    rating: 4.5,
-    releaseDate: DateTime(2025, 1, 1),
-    platforms: [Platform.PS5],
+    id: 'call_of_duty_mobile',
+    description:
+        'Call of Duty: Mobile (CODM) is a free-to-play first-person shooter (FPS) video game developed by TiMi Studio Group and published by Activision for Android and iOS. It is known for offering a mobile-friendly version of the popular Call of Duty franchise, featuring both multiplayer and Battle Royale modes. The game allows players to engage in fast-paced battles, customize their loadouts, and experience console-quality graphics and sound on their mobile devices.',
+    price: 0,
+    thumbnailUrl:
+        'https://drive.google.com/uc?export=download&id=1sAsF3qOGR0ONSJnhxVZCEhUTNYpAG40n',
+    bannerUrl:
+        'https://drive.google.com/uc?export=download&id=1TrGEgd1anKb-xB_sHrETtapcqrUjcCTz',
+    title: 'Call of Duty Mobile',
+    rating: 4.3,
+    releaseDate: DateTime(2019, 10, 1),
+    platforms: [Platform.ANDROID, Platform.IOS],
+    iconUrl:
+        'https://drive.google.com/uc?export=download&id=1hfiK4axhziYRbDVnWnJfYyRamitzIFW2',
     videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
+        'https://drive.google.com/uc?export=download&id=1N10VKZE8L5z7QhgR4J0NHHbWBtKQbO7e',
   ),
   Game(
-    id: 'game2',
-    description: 'Game 2',
-    price: 19.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 2',
-    rating: 4.0,
-    releaseDate: DateTime(2025, 2, 1),
-    platforms: [Platform.PS4],
+    id: 'pubg',
+    description:
+        'PUBG: BATTLEGROUNDS, the high-stakes winner-take-all shooter that started the Battle Royale craze, is free-to-play! Drop into diverse maps, loot unique weapons and supplies, and survive in an ever-shrinking zone where every turn could be your last.',
+    price: 0,
+    thumbnailUrl:
+        'https://drive.google.com/uc?export=download&id=1MSYUYYQXxXnc1K-DQohY9nIZkreO-UoQ',
+    bannerUrl:
+        'https://drive.google.com/uc?export=download&id=1dl2ZGm-C-nzSu48_e6uY_BmFuuE-kygH',
+    title: 'PUBG: BATTLEGROUNDS',
+    rating: 3.0,
+    releaseDate: DateTime(2017, 3, 23),
+    platforms: [Platform.PS, Platform.WINDOWS, Platform.XBOX],
+    iconUrl:
+        'https://drive.google.com/uc?export=download&id=1ukjkll6bOJJMcl9pz4BkdxDPAR-KNEzB',
     videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
+        'https://drive.google.com/uc?export=download&id=1hD1JlYQkY5wuKKhf5TjygCO-BqUNT61N',
   ),
   Game(
     id: 'game3',
-    description: 'Game 3',
+    description:
+        'Minecraft is a game made up of blocks, creatures, and community. You can survive the night or build a work of art – the choice is all yours. But if the thought of exploring a vast new world all on your own feels overwhelming, then fear not! Let\'s explore what Minecraft is all about!\n\nMinecraft has no set goal and can be played however you\'d like! This is why it\'s sometimes called a “sandbox game” – there are lots of things for you to do, and lots of ways that you can play. If you like being creative, then you can use the blocks to build things from your imagination. If you\'re feeling brave, you can explore the world and face daring challenges. Blocks can be broken, crafted, placed to reshape the landscape, or used to build fantastical creations.\n\nCreatures can be battled or befriended, depending on how you play. The world of Minecraft allows for epic adventures, quiet meditations, and everything in between. You can even share your creations with other players, or play in community worlds!',
     price: 29.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 3',
+    thumbnailUrl:
+        'https://drive.google.com/uc?export=download&id=1dpUX4LyDSjoqFSogSWcbusR2y2MklgkZ',
+    bannerUrl:
+        'https://drive.google.com/uc?export=download&id=1nFQ6Kvp216w2lQeVMOPXu7Ub49bH-gwR',
+    title: 'Minecraft',
     rating: 4.8,
     releaseDate: DateTime(2025, 3, 1),
-    platforms: [Platform.WINDOWS],
+    platforms: [
+      Platform.WINDOWS,
+      Platform.PS,
+      Platform.XBOX,
+      Platform.ANDROID,
+      Platform.IOS,
+      Platform.MAC,
+    ],
+    iconUrl:
+        'https://drive.google.com/uc?export=download&id=1skTrx3O0ztC-_Nc-nVuKlhFmN9gK5Z0x',
     videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
-  ),
-  Game(
-    id: 'game4',
-    description: 'Game 4',
-    price: 39.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 4',
-    rating: 3.5,
-    releaseDate: DateTime(2025, 4, 1),
-    platforms: [Platform.SWITCH],
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
-  ),
-  Game(
-    id: 'game5',
-    description: 'Game 5',
-    price: 49.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 5',
-    rating: 4.2,
-    releaseDate: DateTime(2025, 5, 1),
-    platforms: [Platform.ANDROID],
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
-  ),
-  Game(
-    id: 'game6',
-    description: 'Game 6',
-    price: 59.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 6',
-    rating: 4.7,
-    releaseDate: DateTime(2025, 6, 1),
-    platforms: [Platform.IOS],
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
-  ),
-  Game(
-    id: 'game7',
-    description: 'Game 7',
-    price: 69.99,
-    thumbnailUrl: 'https://picsum.photos/1000/3000',
-    bannerUrl: 'https://picsum.photos/3000/1000',
-    title: 'Game 7',
-    rating: 4.1,
-    releaseDate: DateTime(2025, 7, 1),
-    platforms: [Platform.MAC],
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
+        'https://drive.google.com/uc?export=download&id=1I8iXC3fzd3q0DVwDmJbEGXR_o8lagzwz',
   ),
 ];

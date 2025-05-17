@@ -4,10 +4,6 @@ void pushPage(BuildContext context, WidgetBuilder pageBuilder) {
   Navigator.of(context).push(createRoute(pageBuilder));
 }
 
-void replacePage(BuildContext context, WidgetBuilder pageBuilder) {
-  Navigator.of(context).pushReplacement(createRoute(pageBuilder));
-}
-
 Route createRoute(WidgetBuilder pageBuilder) {
   return PageRouteBuilder(
     pageBuilder:

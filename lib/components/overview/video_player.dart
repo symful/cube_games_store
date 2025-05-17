@@ -7,12 +7,12 @@ import 'package:media_kit_video/media_kit_video.dart';
 
 class VideoPlayer extends StatefulWidget {
   final String videoUrl;
-  final String thumbnailUrl;
+  final String bannerUrl;
 
   const VideoPlayer({
     super.key,
     required this.videoUrl,
-    required this.thumbnailUrl,
+    required this.bannerUrl,
   });
 
   @override
@@ -63,8 +63,8 @@ class _VideoPlayerState extends State<VideoPlayer> {
                           child: Stack(
                             children: [
                               Image.network(
-                                widget.thumbnailUrl,
-                                fit: BoxFit.cover,
+                                widget.bannerUrl,
+                                fit: BoxFit.contain,
                                 width: constraints.maxWidth,
                                 height: constraints.maxHeight,
                               ),
