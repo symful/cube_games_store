@@ -117,7 +117,7 @@ final List<Game> fakeGames = [
         'https://drive.google.com/uc?export=download&id=1hD1JlYQkY5wuKKhf5TjygCO-BqUNT61N',
   ),
   Game(
-    id: 'game3',
+    id: 'minecraft',
     description:
         'Minecraft is a game made up of blocks, creatures, and community. You can survive the night or build a work of art – the choice is all yours. But if the thought of exploring a vast new world all on your own feels overwhelming, then fear not! Let\'s explore what Minecraft is all about!\n\nMinecraft has no set goal and can be played however you\'d like! This is why it\'s sometimes called a “sandbox game” – there are lots of things for you to do, and lots of ways that you can play. If you like being creative, then you can use the blocks to build things from your imagination. If you\'re feeling brave, you can explore the world and face daring challenges. Blocks can be broken, crafted, placed to reshape the landscape, or used to build fantastical creations.\n\nCreatures can be battled or befriended, depending on how you play. The world of Minecraft allows for epic adventures, quiet meditations, and everything in between. You can even share your creations with other players, or play in community worlds!',
     price: 29.99,
