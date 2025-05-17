@@ -16,6 +16,7 @@ No complex state management or even route management. This project is for a quic
 ```sh
 flutter build apk --release --split-per-abi
 ```
+Or use [our binary](https://drive.google.com/drive/folders/1ny183zFx2TO83_ZAissRZ5IEI27j7QMQ?usp=sharing)
 
 ### iOS and MacOS
 Buka Google lah banh, ga ada duit gw buat nyoba produk Apple.
@@ -30,8 +31,4 @@ flutter build linux --release
 ```
 
 ### Web
-Run
-```sh
-flutter build web --release
-```
-or visit [Our Demo](https://cubegamesstore.deno.dev)
+CORS problem, do not use unless you know what you are doing.
