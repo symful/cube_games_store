@@ -13,6 +13,7 @@ class Game {
   final String videoUrl;
   final double price;
   final String currencyTag = "\$";
+  final String id;
 
   Game({
     required this.title,
@@ -24,6 +25,7 @@ class Game {
     required this.bannerUrl,
     required this.videoUrl,
     required this.price,
+    required this.id,
   });
 
   static IconData getIconData(Platform platform) {
@@ -62,6 +64,7 @@ enum Platform { WINDOWS, PS5, PS4, XBOX, SWITCH, ANDROID, IOS, MAC, LINUX, WEB }
 
 final List<Game> fakeGames = [
   Game(
+    id: 'game1',
     description: 'Game 1',
     price: 9.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',
@@ -74,6 +77,7 @@ final List<Game> fakeGames = [
         'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
+    id: 'game2',
     description: 'Game 2',
     price: 19.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',
@@ -86,6 +90,7 @@ final List<Game> fakeGames = [
         'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
+    id: 'game3',
     description: 'Game 3',
     price: 29.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',
@@ -98,6 +103,7 @@ final List<Game> fakeGames = [
         'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
+    id: 'game4',
     description: 'Game 4',
     price: 39.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',
@@ -110,6 +116,7 @@ final List<Game> fakeGames = [
         'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
+    id: 'game5',
     description: 'Game 5',
     price: 49.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',
@@ -121,8 +128,8 @@ final List<Game> fakeGames = [
     videoUrl:
         'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
-
   Game(
+    id: 'game6',
     description: 'Game 6',
     price: 59.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',
@@ -135,6 +142,7 @@ final List<Game> fakeGames = [
         'https://drive.google.com/uc?export=download&id=1CJ7xLGPSj2JiUWw-BDXdNhUlfWfHTm8F',
   ),
   Game(
+    id: 'game7',
     description: 'Game 7',
     price: 69.99,
     thumbnailUrl: 'https://picsum.photos/1000/3000',

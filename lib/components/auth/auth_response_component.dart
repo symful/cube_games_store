@@ -1,6 +1,6 @@
 import 'package:cube_games_store/components/custom_icons/success_icon.dart';
 import 'package:cube_games_store/theme.dart';
-import 'package:cube_games_store/transition_page.dart';
+import 'package:cube_games_store/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:cube_games_store/pages/home/home_page.dart';
 
@@ -68,7 +68,10 @@ class AuthResponseComponent extends StatelessWidget {
                                 const SizedBox(height: 30),
                                 TextButton(
                                   onPressed: () {
-                                    pushPage(context, (_) => const HomePage());
+                                    replacePage(
+                                      context,
+                                      (_) => const HomePage(),
+                                    );
                                   },
 
                                   child: Padding(

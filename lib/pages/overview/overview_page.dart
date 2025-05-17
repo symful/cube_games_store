@@ -138,9 +138,8 @@ class _OverviewPageState extends State<OverviewPage> {
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(8), // Top-right rounded
-                          bottomLeft: Radius.circular(8), // Bottom-left rounded
-                          // Other corners remain square
+                          topRight: Radius.circular(8),
+                          bottomLeft: Radius.circular(8),
                         ),
                       ),
                     ),

@@ -1,17 +1,36 @@
-# cube_games_store
+# Cube Games Store
+Didesain oleh Akbar (homok) dan diimplementasikan oleh Kemal (ganteng). Ga ada server, database, dll.
 
-A new Flutter project.
+## Dependencies
+No complex state management or even route management. This project is for a quick prototype for UI display.
+- Google Fonts (Additional fonts)
+- Iconly (Additional icons)
+- Flutter SVG (SVG)
+- Media Kit (Video Player)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Android
+1. Follow Flutter's official documentation about [Build and release an Android app](https://docs.flutter.dev/deployment/android).
+2. Run
+```sh
+flutter build apk --release --split-per-abi
+```
 
-A few resources to get you started if this is your first Flutter project:
+### iOS and MacOS
+Buka Google lah banh, ga ada duit gw buat nyoba produk Apple.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Windows (Untested)
+Please follow Flutter's official documentation about [Building Windows apps with Flutter](https://docs.flutter.dev/platform-integration/windows/building).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# cube_games_store
+### Linux
+Run
+```sh
+flutter build linux --release
+```
+
+### Web
+Run
+```sh
+flutter build web --release
+```

@@ -1,7 +1,7 @@
 import 'package:cube_games_store/components/shared/sale_section_list.dart';
 import 'package:cube_games_store/data/sale_event.dart';
 import 'package:cube_games_store/pages/sale_section/sale_section_page.dart';
-import 'package:cube_games_store/transition_page.dart';
+import 'package:cube_games_store/navigator.dart';
 import 'package:flutter/material.dart';
 
 class HomeSaleSection extends StatelessWidget {
@@ -12,9 +12,8 @@ class HomeSaleSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min, // Important for proper sizing
+      mainAxisSize: MainAxisSize.min,
       children: [
-        // Header Row
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
           child: Row(

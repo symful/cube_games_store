@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 height: 82,
                 alignment: Alignment.bottomCenter,
                 child: Container(
-                  height: 3, // Line thickness
+                  height: 3,
                   width: 29,
                   color: Color(0xff65EF23),
                 ),

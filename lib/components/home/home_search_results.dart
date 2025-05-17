@@ -1,7 +1,7 @@
 import 'package:cube_games_store/data/game.dart';
 import 'package:cube_games_store/pages/overview/overview_page.dart';
 import 'package:cube_games_store/theme.dart';
-import 'package:cube_games_store/transition_page.dart';
+import 'package:cube_games_store/navigator.dart';
 import 'package:flutter/material.dart';
 
 class HomeSearchResults extends StatelessWidget {
@@ -49,7 +49,6 @@ class HomeSearchResult extends StatelessWidget {
               child: Image.network(game.thumbnailUrl, fit: BoxFit.cover),
             ),
             const SizedBox(width: 16),
-            // Expanded for title/subtitle
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
