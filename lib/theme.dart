@@ -47,6 +47,7 @@ final ThemeData darkTheme = ThemeData(
       fontSize: 24,
       fontWeight: FontWeight.w400,
       letterSpacing: 2,
+      color: Colors.white,
     ),
     scrolledUnderElevation: 0,
     iconTheme: IconThemeData(color: Colors.white),
