@@ -1,6 +1,7 @@
 import 'package:cube_games_store/components/shared/sale_section_list.dart';
 import 'package:cube_games_store/data/sale_event.dart';
 import 'package:cube_games_store/pages/sale_section/sale_section_page.dart';
+import 'package:cube_games_store/transition_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeSaleSection extends StatelessWidget {
@@ -29,12 +30,9 @@ class HomeSaleSection extends StatelessWidget {
               const Spacer(),
               TextButton(
                 onPressed: () {
-                  Navigator.push(
+                  pushPage(
                     context,
-                    MaterialPageRoute(
-                      builder:
-                          (context) => SaleSectionPage(saleEvent: saleEvent),
-                    ),
+                    (_) => SaleSectionPage(saleEvent: saleEvent),
                   );
                 },
                 child: const Text(

@@ -2,6 +2,7 @@ import 'package:cube_games_store/components/shared/game_thumbnail.dart';
 import 'package:cube_games_store/data/game.dart';
 import 'package:cube_games_store/data/sale_event.dart';
 import 'package:cube_games_store/pages/overview/overview_page.dart';
+import 'package:cube_games_store/transition_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -100,11 +101,7 @@ class _SaleSectionListState extends State<SaleSectionList> {
 
   Widget _buildGameCard(BuildContext context, Game game) {
     return InkWell(
-      onTap:
-          () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (_) => OverviewPage(game: game)),
-          ),
+      onTap: () => pushPage(context, (_) => OverviewPage(game: game)),
       child: Stack(
         alignment: Alignment.center,
         children: [

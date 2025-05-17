@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cube_games_store/components/custom_icons/play_button_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:media_kit/media_kit.dart';
@@ -38,34 +40,42 @@ class _VideoPlayerState extends State<VideoPlayer> {
     return Stack(
       children: [
         Video(controller: controller),
-        if (!hasStarted)
-          InkWell(
-            onTap: () {
-              setState(() {
-                hasStarted = true;
-              });
-              player.open(Media(widget.videoUrl), play: true);
-            },
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return SizedBox(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  child: Stack(
-                    children: [
-                      Image.network(
-                        widget.thumbnailUrl,
-                        fit: BoxFit.cover,
-                        width: constraints.maxWidth,
-                        height: constraints.maxHeight,
-                      ),
-                      Center(child: PlayButtonIcon()),
-                    ],
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          child:
+              hasStarted
+                  ? const SizedBox()
+                  : InkWell(
+                    key: ValueKey(hasStarted),
+                    onTap: () {
+                      setState(() {
+                        hasStarted = true;
+                      });
+                      Timer(const Duration(milliseconds: 600), () {
+                        player.open(Media(widget.videoUrl), play: true);
+                      });
+                    },
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        return SizedBox(
+                          width: constraints.maxWidth,
+                          height: constraints.maxHeight,
+                          child: Stack(
+                            children: [
+                              Image.network(
+                                widget.thumbnailUrl,
+                                fit: BoxFit.cover,
+                                width: constraints.maxWidth,
+                                height: constraints.maxHeight,
+                              ),
+                              Center(child: PlayButtonIcon()),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                );
-              },
-            ),
-          ),
+        ),
       ],
     );
   }

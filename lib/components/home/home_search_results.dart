@@ -1,6 +1,7 @@
 import 'package:cube_games_store/data/game.dart';
 import 'package:cube_games_store/pages/overview/overview_page.dart';
 import 'package:cube_games_store/theme.dart';
+import 'package:cube_games_store/transition_page.dart';
 import 'package:flutter/material.dart';
 
 class HomeSearchResults extends StatelessWidget {
@@ -36,17 +37,17 @@ class HomeSearchResult extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) => OverviewPage(game: game)),
-        );
+        pushPage(context, (_) => OverviewPage(game: game));
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         child: Row(
           children: [
-            // Fixed-size leading widget
-            const SizedBox(width: 40, height: 40, child: Placeholder()),
+            SizedBox(
+              width: 40,
+              height: 40,
+              child: Image.network(game.thumbnailUrl, fit: BoxFit.cover),
+            ),
             const SizedBox(width: 16),
             // Expanded for title/subtitle
             Expanded(

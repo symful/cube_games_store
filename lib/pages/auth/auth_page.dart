@@ -46,118 +46,117 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
           Padding(
             padding: const EdgeInsets.all(24.0),
             child: Center(
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 400),
-                transitionBuilder:
-                    (child, anim) =>
-                        FadeTransition(opacity: anim, child: child),
-                child: SingleChildScrollView(
-                  key: ValueKey(isLoginMode),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(width: 82, height: 80, child: LogoIcon()),
-                      const SizedBox(height: 16),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SizedBox(width: 82, height: 80, child: LogoIcon()),
+                    const SizedBox(height: 16),
 
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        child: Text(
-                          titleText,
-                          key: ValueKey(titleText),
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 36,
-                            fontFamily: 'Revamped',
-                          ),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      child: Text(
+                        titleText,
+                        key: ValueKey(titleText),
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 36,
+                          fontFamily: 'Revamped',
                         ),
                       ),
-                      const SizedBox(height: 4),
+                    ),
+                    const SizedBox(height: 4),
 
-                      AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 300),
-                        child: Text(
-                          subText,
-                          key: ValueKey(subText),
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Russo One',
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      key: ValueKey(subText),
+                      child: Text(
+                        subText,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Russo One',
+                          fontWeight: FontWeight.bold,
                         ),
+                        textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 32),
+                    ),
+                    const SizedBox(height: 32),
 
-                      _buildField(
-                        controller: _usernameController,
-                        label: 'Username',
-                        hint: 'username',
-                        icon: Icons.person,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your username';
-                          }
-                          if (value.length < 3) {
-                            return 'Username must be at least 3 characters';
-                          }
-                          return null;
-                        },
-                      ),
+                    AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      transitionBuilder: (
+                        Widget child,
+                        Animation<double> animation,
+                      ) {
+                        return ScaleTransition(scale: animation, child: child);
+                      },
+                      child:
+                          isLoginMode
+                              ? const SizedBox.shrink()
+                              : _buildField(
+                                controller: _emailController,
+                                label: 'Email',
+                                keyboardType: TextInputType.emailAddress,
+                                hint: 'email@gmail.com',
+                                icon: Icons.email,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Please enter your email';
+                                  }
+                                  if (!RegExp(
+                                    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+                                  ).hasMatch(value)) {
+                                    return 'Please enter a valid email';
+                                  }
+                                  return null;
+                                },
+                              ),
+                    ),
 
-                      // 3) animate the appearance/disappearance of email field
-                      AnimatedSize(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeInOut,
-                        alignment: Alignment.topCenter,
-                        child:
-                            isLoginMode
-                                ? const SizedBox.shrink()
-                                : _buildField(
-                                  controller: _emailController,
-                                  label: 'Email',
-                                  keyboardType: TextInputType.emailAddress,
-                                  hint: 'email@gmail.com',
-                                  icon: Icons.email,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Please enter your email';
-                                    }
-                                    if (!RegExp(
-                                      r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-                                    ).hasMatch(value)) {
-                                      return 'Please enter a valid email';
-                                    }
-                                    return null;
-                                  },
-                                ),
-                      ),
+                    _buildField(
+                      controller: _usernameController,
+                      label: 'Username',
+                      hint: 'username',
+                      icon: Icons.person,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your username';
+                        }
+                        if (value.length < 3) {
+                          return 'Username must be at least 3 characters';
+                        }
+                        return null;
+                      },
+                    ),
 
-                      _buildField(
-                        controller: _passwordController,
-                        label: 'Password',
-                        hint: 'password',
-                        icon: Icons.lock,
-                        obscure: true,
-                        keyboardType: TextInputType.visiblePassword,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter your password';
-                          }
-                          if (value.length < 6) {
-                            return 'Password must be at least 6 characters';
-                          }
-                          return null;
-                        },
-                      ),
+                    _buildField(
+                      controller: _passwordController,
+                      label: 'Password',
+                      hint: 'password',
+                      icon: Icons.lock,
+                      obscure: true,
+                      keyboardType: TextInputType.visiblePassword,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter your password';
+                        }
+                        if (value.length < 6) {
+                          return 'Password must be at least 6 characters';
+                        }
+                        return null;
+                      },
+                    ),
 
-                      const SizedBox(height: 24),
-                      SizedBox(
-                        height: 42,
-                        child: ElevatedButton(
-                          onPressed: _submitAuth,
-                          style: ElevatedButton.styleFrom(
-                            minimumSize: const Size.fromHeight(50),
-                          ),
+                    const SizedBox(height: 24),
+                    SizedBox(
+                      height: 42,
+                      child: ElevatedButton(
+                        onPressed: _submitAuth,
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size.fromHeight(50),
+                        ),
+                        child: AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
                           child:
                               isLoading
                                   ? const CircularProgressIndicator(
@@ -170,6 +169,7 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
                                   )
                                   : Text(
                                     buttonText,
+                                    key: ValueKey(buttonText),
                                     style: const TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w600,
@@ -177,21 +177,29 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
                                   ),
                         ),
                       ),
-                      const SizedBox(height: 24),
+                    ),
+                    const SizedBox(height: 24),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          child: Text(
                             toggleText,
+                            key: ValueKey(toggleText),
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          InkWell(
+                        ),
+                        AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 300),
+                          child: InkWell(
                             onTap: _toggleMode,
+                            key: ValueKey(toggleTextLink),
                             child: Text(
                               toggleTextLink,
                               style: const TextStyle(
@@ -202,20 +210,26 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
 
-          if (isAuthFinished)
-            AuthResponseComponent(
-              isLogin: isLoginMode,
-              username: _usernameController.text,
-            ),
+          AnimatedSwitcher(
+            duration: const Duration(milliseconds: 300),
+            child:
+                isAuthFinished
+                    ? AuthResponseComponent(
+                      key: ValueKey('auth_response'),
+                      isLogin: isLoginMode,
+                      username: _usernameController.text,
+                    )
+                    : const SizedBox.shrink(),
+          ),
         ],
       ),
     );

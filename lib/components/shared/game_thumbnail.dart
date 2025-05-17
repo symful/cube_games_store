@@ -6,5 +6,5 @@ class GameThumbnail extends HomeGameImage {
     super.key,
     required super.borderRadiusSize,
     required super.game,
-  }) : super(imageUrl: game.thumbnailUrl, fit: BoxFit.fill);
+  }) : super(imageUrl: game.thumbnailUrl, fit: BoxFit.cover);
 }
