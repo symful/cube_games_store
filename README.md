@@ -31,4 +31,8 @@ flutter build linux --release
 ```
 
 ### Web
-CORS problem, do not use unless you know what you are doing.
+Run
+```sh
+flutter build web --release
+```
+or visit [Our Web Demo](https://cubegamesstore.deno.dev/)
