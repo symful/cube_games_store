@@ -16,7 +16,7 @@ No complex state management or even route management. This project is for a quic
 ```sh
 flutter build apk --release --split-per-abi
 ```
-Or use [our binary](https://drive.google.com/drive/folders/1ny183zFx2TO83_ZAissRZ5IEI27j7QMQ?usp=sharing)
+Or use [our binary](https://github.com/symful/cube_games_store/releases/tag/1.0.0%2B1)
 
 ### iOS and MacOS
 Buka Google lah banh, ga ada duit gw buat nyoba produk Apple.
