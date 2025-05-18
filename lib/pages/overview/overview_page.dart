@@ -65,34 +65,34 @@ class _OverviewPageState extends State<OverviewPage> {
                 ),
               ),
               const SizedBox(height: 8),
-              Row(
-                children: [
-                  Text(
-                    game.releaseDate.year.toString(),
-                    style: TextStyle(
-                      color: Color(0xff65EF23),
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  children: [
+                    Text(
+                      game.releaseDate.year.toString(),
+                      style: TextStyle(
+                        color: Color(0xff65EF23),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins',
+                      ),
                     ),
-                  ),
-                  lineDivider,
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Row(spacing: 4, children: game.getIcons()),
-                  ),
-                  lineDivider,
-                  Icon(IconlyBold.star, color: Color(0xffFFCC02), size: 24),
-                  const SizedBox(width: 4),
-                  Text(
-                    game.rating.toString(),
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Poppins',
+                    lineDivider,
+                    Row(spacing: 4, children: game.getIcons()),
+                    lineDivider,
+                    Icon(IconlyBold.star, color: Color(0xffFFCC02), size: 24),
+                    const SizedBox(width: 4),
+                    Text(
+                      game.rating.toString(),
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Poppins',
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(height: 16),
               const Align(
