@@ -46,7 +46,7 @@ class HomeSearchResult extends StatelessWidget {
             SizedBox(
               width: 40,
               height: 40,
-              child: Image.network(game.thumbnailUrl, fit: BoxFit.contain),
+              child: Image.network(game.iconUrl, fit: BoxFit.contain),
             ),
             const SizedBox(width: 16),
             Expanded(

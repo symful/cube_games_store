@@ -85,46 +85,36 @@ final List<Game> fakeGames = [
     description:
         'Call of Duty: Mobile (CODM) is a free-to-play first-person shooter (FPS) video game developed by TiMi Studio Group and published by Activision for Android and iOS. It is known for offering a mobile-friendly version of the popular Call of Duty franchise, featuring both multiplayer and Battle Royale modes. The game allows players to engage in fast-paced battles, customize their loadouts, and experience console-quality graphics and sound on their mobile devices.',
     price: 0,
-    thumbnailUrl:
-        'https://drive.google.com/uc?export=download&id=1sAsF3qOGR0ONSJnhxVZCEhUTNYpAG40n',
-    bannerUrl:
-        'https://drive.google.com/uc?export=download&id=1TrGEgd1anKb-xB_sHrETtapcqrUjcCTz',
+    thumbnailUrl: 'https://cubegamesstoreproxy.deno.dev/static/codm-t.jpg',
+    bannerUrl: 'https://cubegamesstoreproxy.deno.dev/static/codm-b.jpg',
     title: 'Call of Duty Mobile',
     rating: 4.3,
     releaseDate: DateTime(2019, 10, 1),
     platforms: [Platform.ANDROID, Platform.IOS],
-    iconUrl:
-        'https://drive.google.com/uc?export=download&id=1hfiK4axhziYRbDVnWnJfYyRamitzIFW2',
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1N10VKZE8L5z7QhgR4J0NHHbWBtKQbO7e',
+    iconUrl: 'https://cubegamesstoreproxy.deno.dev/static/codm-i.webp',
+    videoUrl: 'https://cubegamesstoreproxy.deno.dev/static/codm.mp4',
   ),
   Game(
     id: 'pubg',
     description:
         'PUBG: BATTLEGROUNDS, the high-stakes winner-take-all shooter that started the Battle Royale craze, is free-to-play! Drop into diverse maps, loot unique weapons and supplies, and survive in an ever-shrinking zone where every turn could be your last.',
     price: 0,
-    thumbnailUrl:
-        'https://drive.google.com/uc?export=download&id=1MSYUYYQXxXnc1K-DQohY9nIZkreO-UoQ',
-    bannerUrl:
-        'https://drive.google.com/uc?export=download&id=1dl2ZGm-C-nzSu48_e6uY_BmFuuE-kygH',
+    thumbnailUrl: 'https://cubegamesstoreproxy.deno.dev/static/pubg-t.jpg',
+    bannerUrl: 'https://cubegamesstoreproxy.deno.dev/static/pubg-b.png',
     title: 'PUBG: BATTLEGROUNDS',
     rating: 3.0,
     releaseDate: DateTime(2017, 3, 23),
     platforms: [Platform.PS, Platform.WINDOWS, Platform.XBOX],
-    iconUrl:
-        'https://drive.google.com/uc?export=download&id=1ukjkll6bOJJMcl9pz4BkdxDPAR-KNEzB',
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1hD1JlYQkY5wuKKhf5TjygCO-BqUNT61N',
+    iconUrl: 'https://cubegamesstoreproxy.deno.dev/static/pubg-i.png',
+    videoUrl: 'https://cubegamesstoreproxy.deno.dev/static/pubg.mp4',
   ),
   Game(
     id: 'minecraft',
     description:
         'Minecraft is a game made up of blocks, creatures, and community. You can survive the night or build a work of art – the choice is all yours. But if the thought of exploring a vast new world all on your own feels overwhelming, then fear not! Let\'s explore what Minecraft is all about!\n\nMinecraft has no set goal and can be played however you\'d like! This is why it\'s sometimes called a “sandbox game” – there are lots of things for you to do, and lots of ways that you can play. If you like being creative, then you can use the blocks to build things from your imagination. If you\'re feeling brave, you can explore the world and face daring challenges. Blocks can be broken, crafted, placed to reshape the landscape, or used to build fantastical creations.\n\nCreatures can be battled or befriended, depending on how you play. The world of Minecraft allows for epic adventures, quiet meditations, and everything in between. You can even share your creations with other players, or play in community worlds!',
     price: 29.99,
-    thumbnailUrl:
-        'https://drive.google.com/uc?export=download&id=1dpUX4LyDSjoqFSogSWcbusR2y2MklgkZ',
-    bannerUrl:
-        'https://drive.google.com/uc?export=download&id=1nFQ6Kvp216w2lQeVMOPXu7Ub49bH-gwR',
+    thumbnailUrl: 'https://cubegamesstoreproxy.deno.dev/static/minecraft-t.png',
+    bannerUrl: 'https://cubegamesstoreproxy.deno.dev/static/minecraft-b.png',
     title: 'Minecraft',
     rating: 4.8,
     releaseDate: DateTime(2025, 3, 1),
@@ -136,9 +126,7 @@ final List<Game> fakeGames = [
       Platform.IOS,
       Platform.MAC,
     ],
-    iconUrl:
-        'https://drive.google.com/uc?export=download&id=1skTrx3O0ztC-_Nc-nVuKlhFmN9gK5Z0x',
-    videoUrl:
-        'https://drive.google.com/uc?export=download&id=1I8iXC3fzd3q0DVwDmJbEGXR_o8lagzwz',
+    iconUrl: 'https://cubegamesstoreproxy.deno.dev/static/minecraft-i.png',
+    videoUrl: 'https://cubegamesstoreproxy.deno.dev/static/minecraft.mp4',
   ),
 ];
